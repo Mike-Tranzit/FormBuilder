@@ -1,0 +1,28 @@
+.tabs__list {
+    padding-left: 0;
+    margin-bottom: 0;
+}
+
+.tabs__item {
+    display: inline-block;
+    list-style: none;
+    margin-bottom: -1px;
+    padding: 0.3rem 3rem;
+    border-radius: 6px 6px 0 0;
+    border: solid #777777;
+    border-width: 1px 1px 0 1px;
+}
+
+.tabs__item:hover {
+    cursor: pointer;
+}
+
+.tabs__item--active {
+    background-color: #E6E6E6;
+}
+
+.tabs__content {
+    border: 1px solid #777777;
+    margin-top: 1px;
+    padding: 15px;
+}

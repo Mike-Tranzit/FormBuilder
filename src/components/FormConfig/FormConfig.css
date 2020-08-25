@@ -1,0 +1,13 @@
+.config-form {
+    text-align: right;
+}
+
+.config-form__btn {
+    display: inline-block;
+    padding: 4px 35px;
+    margin-top: 27px;
+}
+
+.config-form__textarea {
+    width: 100%;
+}
