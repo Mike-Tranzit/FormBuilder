@@ -8,14 +8,14 @@ export class JSONchecker {
         return this;
     }
 
-    replaceQuotas = (payload: any) => payload.replace(/'/g, '"');
+    replaceQuotas = (payload: string): string  => payload.replace(/'/g, '"');
 
-    addQuotasToKeys = (payload: any) => payload.replace(/(\w+:)|(\w+ :)/g, function(matchedString: any) {
+    addQuotasToKeys = (payload: string): string => payload.replace(/(\w+:)|(\w+ :)/g, function(matchedString: any) {
         const separatedString = matchedString.substring(0, matchedString.length - 1);
         return `"${separatedString}":`;
     });
 
-    pipe = (...params: any[]) => (item: any) => params.reduceRight((acc: any, fn: any) => fn(acc), item);
+    pipe = (...params: any[]) => (item: string) => params.reduceRight((acc: string, fn: Function) => fn(acc), item);
 
     correctElements() {
         this.result = this.pipe(
@@ -25,7 +25,7 @@ export class JSONchecker {
         return this;
     }
 
-    inspectResult() {
+    inspectResult(): Object | boolean {
         let parsedResult;
         try {
             parsedResult = JSON.parse(this.result);

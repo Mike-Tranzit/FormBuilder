@@ -1,19 +1,12 @@
 import React, {ReactElement} from 'react';
-import {FormButton} from "../../../types";
-
-type FormButtons = {
-    buttons: FormButton[]
-}
+import {FormButton, FormButtons} from "../../../types";
 
 export const Buttons: React.FC<FormButtons> = ({buttons}: FormButtons): ReactElement => {
 
-    const Button: React.FC<FormButton> = ({label, type, clickHandler}: FormButton): ReactElement => {
+    const Button: React.FC<FormButton> = ({label, type = undefined}: FormButton): ReactElement => {
         return (
             <>
-                <button className="config-form__btn" onClick={(e) => {
-                    e.preventDefault();
-                    clickHandler();
-                }}>{label}</button>
+                <button className="config-form__btn" type={type}>{label}</button>
             </>
         )
     };

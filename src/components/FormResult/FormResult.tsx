@@ -1,16 +1,16 @@
 import React, {ReactElement} from 'react';
 import {useSelector} from 'react-redux';
-import {State} from "../../store/reducers/formReducer";
+import {State} from '../../types';
 import {Title, InputField, Number, Checkbox, DateField, TextareaField, Radio, Buttons} from './FormElements/index';
 import {FormElement} from "../../types";
 import './FormResult.css';
 
-
 export const FormResult: React.FC = (): ReactElement => {
 
-    const selectStateHandler = (state: State) => state.formConfigData;
+    const selectStateHandler = (state: State) => state.formConfigData || {};
     const formConfigData = useSelector(selectStateHandler);
     const {title, items, buttons} = formConfigData;
+
     const elements = (params: FormElement & {key: string}) => ({
         "textfield": <InputField {...params}/>,
         "numberfield": <Number {...params}/>,

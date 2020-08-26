@@ -1,7 +1,8 @@
-import * as types from '../types';
+import * as actions from '../actions';
+import {FormConfigData} from '../../types';
 
-export const setFormConfig = (payload: any) => ({
-    type: types.SET_FORM_CONFIG,
+export const setFormConfig = (payload: FormConfigData) => ({
+    type: actions.SET_FORM_CONFIG,
     payload
 } as const);
 

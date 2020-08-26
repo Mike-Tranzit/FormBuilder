@@ -3,5 +3,7 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/src/components/FormConfig/FormConfig.tsx" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/store/reducers/formReducer.ts" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/tests/e2e/fixtures/settings.json" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/tests/e2e/integration/FormResult.test.ts" charset="UTF-8" />
   </component>
 </project>

@@ -15,6 +15,14 @@ export type FormElement = {
 
 export type FormButton = {
     label: string;
-    type: string,
-    clickHandler: Function
+    type: "button" | "submit" | "reset" | undefined
 }
+
+export type FormButtons = {
+    buttons: FormButton[]
+}
+
+export type FormConfigData = Partial<FormTitle & {
+    buttons: FormButton[],
+    items: FormElement[]
+}>
