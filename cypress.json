@@ -2,6 +2,6 @@
   "baseUrl": "http://localhost:4200/",
   "integrationFolder": "src/tests/e2e/integration",
   "supportFile": "src/tests/e2e/support",
-  "fixturesFolder": "src/tests/e2e/fixtures",
+  "fixturesFolder": "src/tests/fixtures",
   "viewportWidth": 1280
 }

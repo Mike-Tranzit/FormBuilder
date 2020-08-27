@@ -20,12 +20,15 @@
     "noEmit": true,
     "jsx": "react",
     "types": [
-      "cypress"
+      "cypress",
+      "jest"
     ]
   },
   "include": [
     "../node_modules/cypress",
     "./*/*.ts",
-    "src"
-  ]
+    "src",
+    "tests"
+  ],
+  "typeRoots": ["node_modules/@types"]
 }
