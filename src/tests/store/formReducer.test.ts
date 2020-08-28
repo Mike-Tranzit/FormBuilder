@@ -1,5 +1,7 @@
 import {initialState, default as formReducer} from "../../store/reducers/formReducer";
+import { createStore } from "redux";
 import * as t from "../../store/actions";
+import {setFormConfig} from "../../store/actions/formActions";
 import * as payload from '../fixtures/settings.json';
 import {FormConfigData} from "../../types";
 
@@ -15,4 +17,10 @@ describe('form reducer', () => {
             formConfigData: action.payload
         })
     });
+
+    it('SET_FORM_CONFIG. Set data in store should be correct', () => {
+        const store = createStore(formReducer);
+        store.dispatch(setFormConfig(payload as FormConfigData));
+        expect(store.getState().formConfigData).toEqual(payload);
+    })
 });
