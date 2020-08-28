@@ -6,7 +6,7 @@ export const Radio: React.FC<FormElement> = ({label, points = []}: FormElement):
     const RadioButton: React.FC<FormRadioElement> = ({value, label} : FormRadioElement): ReactElement => {
         return (
             <>
-                <label className="">{label}<input type="radio" value={value} name="radio"/></label>
+                <label>{label}<input type="radio" value={value} name="radio"/></label>
             </>
         )
     }

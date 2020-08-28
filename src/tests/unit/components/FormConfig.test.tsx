@@ -21,7 +21,7 @@ describe('<FormConfig/>', () => {
 
     beforeEach(() => {
         component = mount(<AppWrapper/>);
-        window.alert.mockClear();
+        jest.resetAllMocks();
     });
 
     const setTextareaValue = (value: string): void => {
