@@ -2,7 +2,7 @@ import * as actions from '../actions';
 import { FormActionsType } from '../actions/formActions';
 import { State } from '../../types/index';
 
-const initialState: State = {
+export const initialState: State = {
     formConfigData: null!
 };
 
