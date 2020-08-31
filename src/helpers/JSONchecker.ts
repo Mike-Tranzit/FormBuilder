@@ -1,11 +1,8 @@
 export class JSONchecker {
 
     private result: any;
-    private payload: string;
 
-    constructor(payload: string) {
-        this.payload = payload;
-        return this;
+    constructor(private payload: string) {
     }
 
     replaceQuotas = (payload: string): string  => payload.replace(/'/g, '"');
