@@ -1,4 +1,4 @@
-import React, {ReactElement} from 'react';
+import React, {ReactElement, useCallback} from 'react';
 import {useSelector} from 'react-redux';
 import {selectResultStateHandler} from '../../helpers/StateHandlers';
 import * as Elements from './FormElements/index';
@@ -8,16 +8,16 @@ export const FormResult: React.FC = (): ReactElement => {
 
     const {title, items, buttons} = useSelector(selectResultStateHandler);
 
-    const elements = (params: FormElement & { key: string }) => ({
-        "textfield": <Elements.InputField {...params}/>,
-        "numberfield": <Elements.Number {...params}/>,
-        "textarea": <Elements.TextareaField {...params}/>,
-        "checkbox": <Elements.Checkbox {...params}/>,
-        "datafield": <Elements.DateField {...params}/>,
-        "radio_buttons": <Elements.Radio {...params}/>,
-    } as {
-        [key: string]: ReactElement
-    });
+    const elements = useCallback((params: FormElement & { key: string }) => ({
+            "textfield": <Elements.InputField {...params}/>,
+            "numberfield": <Elements.Number {...params}/>,
+            "textarea": <Elements.TextareaField {...params}/>,
+            "checkbox": <Elements.Checkbox {...params}/>,
+            "datafield": <Elements.DateField {...params}/>,
+            "radio_buttons": <Elements.Radio {...params}/>,
+        } as {
+            [key: string]: ReactElement
+        }), []);
 
     return (
         <div>
