@@ -14,7 +14,7 @@ export class JSONchecker {
 
     pipe = (...params: any[]) => (item: string) => params.reduceRight((acc: string, fn: Function) => fn(acc), item);
 
-    correctElements() {
+    correctElements(): this {
         this.result = this.pipe(
             this.replaceQuotas,
             this.addQuotasToKeys

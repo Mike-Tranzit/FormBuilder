@@ -8,7 +8,7 @@ export const FormResult: React.FC = (): ReactElement => {
 
     const {title, items, buttons} = useSelector(selectResultStateHandler);
 
-    const elements = useCallback((params: FormElement & { key: string }) => ({
+    const elements = (params: FormElement & { key: string }) => ({
             "textfield": <Elements.InputField {...params}/>,
             "numberfield": <Elements.Number {...params}/>,
             "textarea": <Elements.TextareaField {...params}/>,
@@ -17,7 +17,7 @@ export const FormResult: React.FC = (): ReactElement => {
             "radio_buttons": <Elements.Radio {...params}/>,
         } as {
             [key: string]: ReactElement
-        }), []);
+        });
 
     return (
         <div>
